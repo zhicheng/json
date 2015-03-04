@@ -90,20 +90,7 @@ sbuf_extend(sbuf_t *sbuf, int len)
 int
 sbuf_append(sbuf_t *sbuf, void *buf, int len)
 {
-	if ((sbuf->len + len) > sbuf->max) {
-		int max;
-		char *newbuf;
-		max = sbuf->len + len;
-		newbuf = realloc(sbuf->buf, max);
-		if (max > 0) {
-			if (newbuf != NULL) {
-				sbuf->buf = newbuf;
-				sbuf->max = max;
-			} else {
-				return -1;
-			}
-		}
-	}
+	sbuf_extend(sbuf, len);
 
 	memcpy(sbuf->buf + sbuf->len, buf, len);
 	sbuf->len += len;
