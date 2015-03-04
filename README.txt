@@ -5,7 +5,7 @@ JSON Parser in C
 json_parser_parse
 json_parser_value
 json_parser_pair
-json_parser_value
+json_parser_ignore
 
 usage:
 
