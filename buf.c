@@ -92,12 +92,12 @@ sbuf_append(sbuf_t *sbuf, void *buf, int len)
 {
 	if ((sbuf->len + len) > sbuf->max) {
 		int max;
-		char *buf;
+		char *newbuf;
 		max = sbuf->len + len;
-		buf = realloc(sbuf->buf, max);
+		newbuf = realloc(sbuf->buf, max);
 		if (max > 0) {
-			if (buf != NULL) {
-				sbuf->buf = buf;
+			if (newbuf != NULL) {
+				sbuf->buf = newbuf;
 				sbuf->max = max;
 			} else {
 				return -1;
