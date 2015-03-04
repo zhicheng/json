@@ -23,7 +23,7 @@ if (root.type == JSON_OBJECT) {
 
 if don't need object or array call `json_parser_ignore`
 
-more demo see github.c require libcurl
+more demo see main.c require libcurl
 
 License:
 Public Domain
